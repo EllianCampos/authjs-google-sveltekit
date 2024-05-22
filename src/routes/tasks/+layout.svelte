@@ -1,15 +1,10 @@
 <script>
-  import { page } from '$app/stores'
-  import { signOut } from '@auth/sveltekit/client'
-  console.log($page.data)
+  import NavbarHome from '$lib/components/NavbarHome.svelte'
 </script>
 
 <header>
-  <p>{$page.data.session?.user.name}</p>
-  <p>{$page.data.session?.user.email}</p>
-  <img src={$page.data.session?.user.image} alt="">
-  <button on:click={signOut}>Signout</button>
+  <NavbarHome />
 </header>
-<main>
+<main class="mt-3">
   <slot />
 </main>

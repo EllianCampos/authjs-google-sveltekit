@@ -1,25 +1,20 @@
-<!-- <script>
-  import { SignIn } from "@auth/sveltekit/components"
-</script>
- 
-<div>
-  <div>
-    <h2>Iniciar Sesión</h2>
-    <SignIn provider="google" signInPage="login">
-      <div slot="submitButton">
-        <span>
-          Ingresar con Google
-        </span>
-      </div>|
-    </SignIn>
-  </div>
-</div> -->
-
-<!-- 
 <script>
   import { signIn } from '@auth/sveltekit/client'
+  import NavbarLogin from '$lib/components/NavbarLogin.svelte'
 </script>
 
-<button on:click={() => {
-  signIn('google', { callbackUrl: '/tasks' })
-}}>Iniciar sesión con Google</button> -->
+<header>
+  <NavbarLogin />
+  <h1 class="text-center mt-3">Inicia sesión para acceder a tu Gestor de tareas</h1>
+</header>
+
+<main class="text-center mt-5">
+  <button
+    on:click={() => {
+      signIn('google', { callbackUrl: '/tasks' })
+    }}>
+      <i class="bi bi-google me-1"></i>
+      Iniciar sesión con Google
+    </button
+  >
+</main>

@@ -1,12 +1,10 @@
 <script>
-  // export let data
-  // console.log(data)
-  import { signIn } from '@auth/sveltekit/client'
+  import NavbarLogin from '$lib/components/NavbarLogin.svelte';
 </script>
 
-<h1>Inicio de sesión con AuthJs</h1>
-<!-- <a href="/tasks">Ingresar</a> -->
-
-<button on:click={() => {
-  signIn('google', { callbackUrl: '/tasks' })
-}}>Iniciar sesión con Google</button>
+<header class="text-center">
+  <NavbarLogin />
+  <h1 class="mt-2">Lista de tareas</h1>
+  <h2>Desarrollada en SvelteKit con AuthJS y Google</h2>
+  <a href="/tasks" class="btn btn-primary">Comenzar</a>
+</header>
